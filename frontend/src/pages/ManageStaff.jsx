@@ -2,7 +2,7 @@
 // turn accounts on or off.
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import api from "../api/client.js";
 
 export default function ManageStaff() {
@@ -42,6 +42,8 @@ export default function ManageStaff() {
     await api.put(`/staff/${staffId}/toggle-active`);
     loadStaff();
   }
+
+  loggedInUser = JSON.parse(localStorage.getItem("user") || "null"); if (!loggedInUser || loggedInUser.role !== "admin") { return <Navigate to="/products" replace />; }
 
   return (
     <div style={{ maxWidth: 600, margin: "40px auto", fontFamily: "sans-serif" }}>
