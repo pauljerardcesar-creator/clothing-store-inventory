@@ -27,7 +27,7 @@ Open the backend folder in a terminal and run:
 Open the frontend folder in another terminal and run:
    npm install
    npm run dev
-Open the link it gives you in your browser (usually http://localhost:5173)
+Open the link it gives you in your browser
 
 You'll also need a free MongoDB database — instructions for setting one up are in the backend folder.
 
