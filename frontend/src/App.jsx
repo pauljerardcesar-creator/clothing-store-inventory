@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import ProductList from "./pages/ProductList.jsx";
 import RecordSale from "./pages/RecordSale.jsx";
+import ManageStaff from "./pages/ManageStaff.jsx";
 
 // This little helper checks: "does this person have a login token?"
 // If not, send them back to the Login page instead of letting them in.
@@ -35,6 +36,8 @@ export default function App() {
           </RequireLogin>
         }
       />
+
+       <Route path="/staff" element={ <RequireLogin> <ManageStaff /> </RequireLogin> } />
 
       {/* If someone visits any other web address, send them to Login */}
       <Route path="*" element={<Navigate to="/login" replace />} />
