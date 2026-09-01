@@ -52,10 +52,7 @@ export default function ProductList() {
 
   return (
     <div style={{ maxWidth: 600, margin: "40px auto", fontFamily: "sans-serif" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h2>Products</h2>
-        <Link to="/sale">Record Sale / Restock &rarr;</Link>
-      </div>
+     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}> <h2>Products</h2> <div> <Link to="/sale">Record Sale / Restock &rarr;</Link> {loggedInUser && loggedInUser.role === "admin" && ( <> {" "}|{" "} <Link to="/staff">Manage Staff</Link> </> )} </div> </div>
 
       <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 16 }}>
         <thead>
