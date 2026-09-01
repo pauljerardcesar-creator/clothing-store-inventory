@@ -8,6 +8,7 @@ const connectToDatabase = require("./db");
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/products");
 const transactionRoutes = require("./routes/transactions");
+const staffRoutes = require("./routes/staff");
 
 dotenv.config(); // reads the .env file so we can use its values
 connectToDatabase();
@@ -28,6 +29,8 @@ app.use("/api/products", productRoutes);
 
 // Everything about sales/restocks lives at /api/transactions/...
 app.use("/api/transactions", transactionRoutes);
+
+app.use("/api/staff", staffRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
